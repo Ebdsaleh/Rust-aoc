@@ -5,27 +5,24 @@ use std::fs::File;
 use std::io::{BufReader, BufRead};
 
 
-
+ 
 //  std::io::Result<()>
 
 fn main() {
     println!("Advent of Code, Day 1 - Calorie Counting");
-    let input: Vec<i32>  = process_data();
-    let mut max_calories:i32 = 0;
-    let mut elf_with_max_calories: usize = 0;
-
-    for (i, v) in input.iter().enumerate() {
-        if *v > max_calories {
-            max_calories = *v;
-            elf_with_max_calories = i;
-        } else {
-            continue;
-        }
-
-    }
-    println!("Elf number {} is carrying the most food.", elf_with_max_calories);
+    let mut input: Vec<i32>  = process_data();
+    let max_calories: i32;
+    let second_most_calories: i32;
+    let third_most_calories: i32;
+    input.sort();
+    input.reverse();
+    max_calories = input[0];
+    second_most_calories = input[1];
+    third_most_calories = input[2];
     println!("Max calories: {}", max_calories);
-    println!("The answer to Adevent of Code Day 1 is: {}", max_calories);
+    println!("The answer to Adevent of Code Day 1 part 1 is: {}", max_calories);
+    let top_three_caloric_sum = max_calories + second_most_calories + third_most_calories;
+    println!("The sum of calories carried by the top 3 elves is: {}", top_three_caloric_sum);
 }
 
 
