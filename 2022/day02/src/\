@@ -1,0 +1,40 @@
+// Advent of Code - Day 2 Rock Paper Scissors
+//  Using the strategy guide (data.txt) you need to calculate your score 
+//  opponent's keys A, B, C
+//  your keys X, Y, Z
+//  A, X: Rock = 1
+//  B, Y:  Paper = 2
+//  C, Z:  Scissors = 3
+//  each item played has a value and adds to your score. Bonus points are added depending on the
+//  outcome.
+//  Win = 6
+//  Draw = 3
+//  Lose = 0
+
+// parse the data file line by line and split the line at the ' ' to extract the values
+// the left column is your opponent's values and the right columns are your values.
+//
+
+use std::fs::File;
+use std::io::{BufReader, BufRead};
+
+
+
+
+fn main() {
+    println!("Advent of Code, Day 2 - Rock, Paper, Scissors");
+    process_data();
+}
+
+fn process_data() {
+    let file = File::open("data.txt").unwrap();
+    let reader = BufReader::new(file);
+    let mut input: Vec<(String, String)> = Vec::new();
+
+    for line in reader.lines(){
+        let mut str_line = line.unwrap();
+        let opp = &str_line[0..1];
+        let you = &str_line[2..3];
+        println!("Opponent: {:?}, You: ",opp);
+    }
+}
