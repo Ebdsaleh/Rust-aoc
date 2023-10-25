@@ -20,7 +20,7 @@ fn main() {
     second_most_calories = input[1];
     third_most_calories = input[2];
     println!("Max calories: {}", max_calories);
-    println!("The answer to Adevent of Code Day 1 part 1 is: {}", max_calories);
+    println!("The answer to Advent of Code Day 1 part 1 is: {}", max_calories);
     let top_three_caloric_sum = max_calories + second_most_calories + third_most_calories;
     println!("The sum of calories carried by the top 3 elves is: {}", top_three_caloric_sum);
 }
